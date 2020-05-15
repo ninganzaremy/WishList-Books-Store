@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-export default class Modal extends Component {
+import { connect } from 'react-redux';
+
+class Modal extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -10,7 +12,10 @@ export default class Modal extends Component {
 	async test() {}
 	render() {
 		return (
-			<section id="modal">
+			<section
+				id="modal"
+				className={this.props.globalState.popupOpen == true ? 'active' : ''}
+			>
 				<div className="modal-container">
 					<div className="close-modal">
 						<i className="fas fa-times" />
@@ -52,3 +57,9 @@ export default class Modal extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => {
+	console.log(state);
+	return state;
+};
+export default connect(mapStateToProps)(Modal);

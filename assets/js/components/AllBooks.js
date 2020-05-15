@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { openingInfoBook } from '../actions/allActions.js';
 
-export default class AllBooks extends Component {
+class AllBooks extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -15,6 +16,7 @@ export default class AllBooks extends Component {
 			<section className="all-books">
 				<div className="book-container">
 					<div
+						onClick={this.props.openingInfoBook}
 						className="book"
 						style={{
 							backgroundImage: `url('https://books.google.com/books/content/images/frontcover/YbtNDwAAQBAJ?fife=w200-h300')`
@@ -25,3 +27,8 @@ export default class AllBooks extends Component {
 		);
 	}
 }
+const mapStateToProps = state => {
+	console.log(state);
+	return state;
+};
+export default connect(mapStateToProps, { openingInfoBook })(AllBooks);

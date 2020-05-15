@@ -32,6 +32,8 @@ action) =>{
     case 'OPEN_INFO_BOOK':
         newState =Object.assign({}, state, {
          popupOpen:true });
+         console.log ('===============NEW STATE')
+         console.log (newState);
          return newState;
         break;
     case 'CLOSE_INFO_BOOK':
