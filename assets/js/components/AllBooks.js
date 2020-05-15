@@ -12,60 +12,16 @@ export default class AllBooks extends Component {
 	async test() {}
 	render() {
 		return (
-      <section className="all-books">
-        <div className="book-container">
-          <div className="book" style={{backgroundImage: `url('https://books.google.com/books/content/images/frontcover/YbtNDwAAQBAJ?fife=w200-h300')`}} />
-        </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-        // <div className="book-container">
-        //   <div className="book">
-        //
-        //   </div>
-        //
-        // </div>
-
-      </section>
-    )
+			<section className="all-books">
+				<div className="book-container">
+					<div
+						className="book"
+						style={{
+							backgroundImage: `url('https://books.google.com/books/content/images/frontcover/YbtNDwAAQBAJ?fife=w200-h300')`
+						}}
+					/>
+				</div>
+			</section>
+		);
 	}
 }

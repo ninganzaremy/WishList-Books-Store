@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import AllBooks from './AllBooks.js';
+import MyList from './MyList.js';
 
 export default class App extends Component {
 	constructor() {
@@ -11,6 +12,16 @@ export default class App extends Component {
 	clickedBtn = () => {};
 	async test() {}
 	render() {
-		return <div className="home">this is home page</div>;
+		return (
+			<div id="approot">
+				<div className="container">
+					<div className="open-list">
+						<i className="fas fa-bars" />
+					</div>
+					<AllBooks />
+					<MyList />
+				</div>
+			</div>
+		);
 	}
 }
