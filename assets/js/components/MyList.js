@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { closingngMyList } from '../actions/allActions.js';
+import { closingngMyList, removingBook } from '../actions/allActions.js';
 
 class MyList extends Component {
 	constructor() {
@@ -10,8 +10,21 @@ class MyList extends Component {
 			name: 'Remy'
 		};
 	}
-	clickedBtn = () => {};
-	async test() {}
+	showListOfBooks = () => {
+		return this.props.globalState.myList.map(book => {
+			return (
+				<li key={book}>
+					{book}{' '}
+					<span
+						className="delete-btn"
+						onClick={this.props.removingBook.bind(null, book)}
+					>
+						Delete
+					</span>
+				</li>
+			);
+		});
+	};
 	render() {
 		return (
 			<section
@@ -19,11 +32,7 @@ class MyList extends Component {
 				className={this.props.globalState.listOpen == true ? 'active' : ''}
 			>
 				<h3>My list of Books</h3>
-				<ul>
-					<li>
-						Harry Potter <span className="delete-btn">Delete</span>
-					</li>
-				</ul>
+				<ul>{this.showListOfBooks()}</ul>
 				<div className="close-list" onClick={this.props.closingngMyList}>
 					{' '}
 					Close List
@@ -37,5 +46,6 @@ const mapStateToProps = state => {
 	return state;
 };
 export default connect(mapStateToProps, {
-	closingngMyList
+	closingngMyList,
+	removingBook
 })(MyList);

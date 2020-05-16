@@ -19,7 +19,7 @@ export const appStateReducer = (state = initialState, action) => {
 			break;
 
 		case 'REMOVE_BOOK':
-			var myList = state.myList.filter(item => item.id !== action.payload);
+			var myList = state.myList.filter(book => book !== action.payload);
 
 			newState = Object.assign({}, state, {
 				myList: myList
