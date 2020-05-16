@@ -14,7 +14,7 @@ export const removingBook = book => {
 
 export const openingInfoBook = book => {
 	return {
-		type: 'OPEN_BOOK',
+		type: 'OPEN_INFO_BOOK',
 		payload: book
 	};
 };

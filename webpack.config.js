@@ -16,7 +16,7 @@ compress.unused = true;
 module.exports = env => {
 	return {
 		entry: {
-			BokksApp: './assets/js/index.js'
+			BooksApp: './assets/js/index.js'
 		},
 		output: {
 			path: path.resolve(__dirname, 'public/js/dist'),

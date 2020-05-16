@@ -10,21 +10,26 @@ class AllBooks extends Component {
 		};
 	}
 	clickedBtn = () => {};
-	async test() {}
-	render() {
-		return (
-			<section className="all-books">
-				<div className="book-container">
+
+	showAllBooks = () => {
+		return this.props.booksData.map(book => {
+			return (
+				<div key={book.title} className="book-container">
 					<div
-						onClick={this.props.openingInfoBook}
+						onClick={this.props.openingInfoBook.bind(null, book)}
 						className="book"
 						style={{
-							backgroundImage: `url('https://books.google.com/books/content/images/frontcover/YbtNDwAAQBAJ?fife=w200-h300')`
+							backgroundImage: `url('${book.coverURL}')`
 						}}
 					/>
 				</div>
-			</section>
-		);
+			);
+		});
+	};
+	async test() {}
+	render() {
+		console.log(this.props);
+		return <section className="all-books">{this.showAllBooks()}</section>;
 	}
 }
 const mapStateToProps = state => {

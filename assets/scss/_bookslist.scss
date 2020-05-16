@@ -1,11 +1,18 @@
-#approot{
+*{
+  box-sizing: border-box;
+}
 
+#approot{
+}
+#approot.popupOpen{
+  filter: blur(25px);
+}
   .container{
     max-width: 1200px;
     margin: 0 auto;
 
   }
-}
+
 .all-books{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -61,7 +68,7 @@
   list-style-type: circle !important;
   padding: 10px 0;
 }
-#myList ul li span .delete-btn{
+#myList ul li span.delete-btn{
   display: inline-block;
   padding: 10px;
   background: red;
@@ -110,7 +117,7 @@
   visibility: hidden;
   transition: all .4s ease-in-out;
 }
-#modal.active{
+#modal .active{
   visibility: visible;
   background: rgba(0,0,0,0.8);
   opacity: 1;
@@ -132,6 +139,9 @@
 }
 #modal .modal-grid .images .cover{
   height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #modal .modal-grid .info h2{
   font-size: 2rem;

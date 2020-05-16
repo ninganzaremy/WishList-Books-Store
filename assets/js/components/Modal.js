@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { closingInfoBook } from '../actions/allActions.js';
 
 class Modal extends Component {
 	constructor() {
@@ -17,7 +18,7 @@ class Modal extends Component {
 				className={this.props.globalState.popupOpen == true ? 'active' : ''}
 			>
 				<div className="modal-container">
-					<div className="close-modal">
+					<div className="close-modal" onClick={this.props.closingInfoBook}>
 						<i className="fas fa-times" />
 					</div>
 					<div className="modal-grid">
@@ -25,30 +26,29 @@ class Modal extends Component {
 							<div
 								className="cover"
 								style={{
-									backgroundImage: `url('https://books.google.com/books/content/images/frontcover/YbtNDwAAQBAJ?fife=w200-h300')`
+									backgroundImage: `url('${this.props.globalState.openInfoBook.coverURL}')`
 								}}
 							/>
 						</div>
 						<div className="info">
-							<h2>Title</h2>
+							<h2>{this.props.globalState.openInfoBook.title}</h2>
 							<div className="info-line">
-								<span className="bold">Author :</span>
-								Michelle Obama
+								<span className="bold">
+									{this.props.globalState.openInfoBook.author} :
+								</span>
 							</div>
 							<div className="info-line">
-								<span className="bold">Genre:</span>
-								Memoir
+								<span className="bold">
+									{this.props.globalState.openInfoBook.category}:
+								</span>
 							</div>
 							<div className="info-line">
-								<span className="bold">Published:</span>
-								2018
+								<span className="bold">
+									{this.props.globalState.openInfoBook.published}:
+								</span>
 							</div>
 							<p className="review">
-								Becoming (book) Becoming is the memoir of former United States
-								first lady Michelle Obama published in 2018. ... The book is
-								published by Crown and was released in 24 languages. One million
-								copies were donated to First Book, an American nonprofit
-								organization which provides books to children.
+								{this.props.globalState.openInfoBook.review}
 							</p>
 						</div>
 					</div>
@@ -62,4 +62,6 @@ const mapStateToProps = state => {
 	console.log(state);
 	return state;
 };
-export default connect(mapStateToProps)(Modal);
+export default connect(mapStateToProps, {
+	closingInfoBook
+})(Modal);
