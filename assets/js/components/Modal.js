@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { closingInfoBook } from '../actions/allActions.js';
+import { closingInfoBook, addingBook } from '../actions/allActions.js';
 
 class Modal extends Component {
 	constructor() {
@@ -26,7 +26,11 @@ class Modal extends Component {
 							<div
 								className="cover"
 								style={{
-									backgroundImage: `url('${this.props.globalState.openInfoBook.coverURL}')`
+									backgroundImage: `url('${
+										this.props.globalState.openInfoBook.coverURL == undefined
+											? ''
+											: this.props.globalState.openInfoBook.coverURL
+									}')`
 								}}
 							/>
 						</div>
@@ -50,6 +54,15 @@ class Modal extends Component {
 							<p className="review">
 								{this.props.globalState.openInfoBook.review}
 							</p>
+							<div
+								className="add-btn"
+								onClick={this.props.addingBook.bind(
+									null,
+									this.props.globalState.openInfoBook.title
+								)}
+							>
+								Add to MyList
+							</div>
 						</div>
 					</div>
 				</div>
@@ -63,5 +76,6 @@ const mapStateToProps = state => {
 	return state;
 };
 export default connect(mapStateToProps, {
-	closingInfoBook
+	closingInfoBook,
+	addingBook
 })(Modal);

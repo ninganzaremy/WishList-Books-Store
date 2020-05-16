@@ -161,6 +161,7 @@
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.4;
+  margin-bottom: 1.5rem;
 }
 #modal .modal-container .close-modal{
   position: absolute;
@@ -170,5 +171,14 @@
   color: white;
   background: red;
   cursor: pointer;
+
+}
+
+#modal .modal-container .add-btn{
+  padding: 20px 40px;
+  color: white;
+  background: purple;
+  cursor: pointer;
+  display: inline-block;
 
 }

@@ -1,5 +1,5 @@
 const initialState = {
-	mylist: [],
+	myList: [],
 	openInfoBook: {},
 	popupOpen: false,
 	listOpen: false
@@ -10,7 +10,7 @@ let newState;
 export const appStateReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'ADD_BOOK':
-			var myList = [...state.mylist, action.payload];
+			var myList = [...state.myList, action.payload];
 
 			newState = Object.assign({}, state, {
 				myList: myList

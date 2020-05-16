@@ -5,10 +5,10 @@ export const addingBook = book => {
 	};
 };
 
-export const removingBook = book => {
+export const removingBook = bookTitle => {
 	return {
 		type: 'REMOVE_BOOK',
-		payload: book
+		payload: bookTitle
 	};
 };
 
@@ -24,12 +24,12 @@ export const closingInfoBook = book => {
 		payload: book
 	};
 };
-export const openingMylist = () => {
+export const openingMyList = () => {
 	return {
 		type: 'OPEN_MY_LIST'
 	};
 };
-export const closingngMylist = () => {
+export const closingngMyList = () => {
 	return {
 		type: 'OPEN_MY_LIST'
 	};
