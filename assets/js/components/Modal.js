@@ -37,23 +37,21 @@ class Modal extends Component {
 						<div className="info">
 							<h2>{this.props.globalState.openInfoBook.title}</h2>
 							<div className="info-line">
-								<span className="bold">
-									{this.props.globalState.openInfoBook.author} :
-								</span>
+								<span className="bold">Author: </span>
+								{this.props.globalState.openInfoBook.author}
 							</div>
 							<div className="info-line">
-								<span className="bold">
-									{this.props.globalState.openInfoBook.category}:
-								</span>
+								<span className="bold">Category: </span>
+								{this.props.globalState.openInfoBook.category}
 							</div>
 							<div className="info-line">
-								<span className="bold">
-									{this.props.globalState.openInfoBook.published}:
-								</span>
+								<span className="bold">Published: </span>
+								{this.props.globalState.openInfoBook.published}
 							</div>
 							<p className="review">
 								{this.props.globalState.openInfoBook.review}
 							</p>
+
 							<div
 								className="add-btn"
 								onClick={this.props.addingBook.bind(

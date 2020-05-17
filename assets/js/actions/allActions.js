@@ -20,7 +20,7 @@ export const openingInfoBook = book => {
 };
 export const closingInfoBook = book => {
 	return {
-		type: 'CLOSE_OPEN_BOOK',
+		type: 'CLOSE_INFO_BOOK',
 		payload: book
 	};
 };
@@ -29,8 +29,8 @@ export const openingMyList = () => {
 		type: 'OPEN_MY_LIST'
 	};
 };
-export const closingngMyList = () => {
+export const closingMyList = () => {
 	return {
-		type: 'OPEN_MY_LIST'
+		type: 'CLOSE_MY_LIST'
 	};
 };

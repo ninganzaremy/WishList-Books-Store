@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { closingngMyList, removingBook } from '../actions/allActions.js';
+import { closingMyList, removingBook } from '../actions/allActions.js';
 
 class MyList extends Component {
 	constructor() {
@@ -33,8 +33,8 @@ class MyList extends Component {
 			>
 				<h3>My list of Books</h3>
 				<ul>{this.showListOfBooks()}</ul>
-				<div className="close-list" onClick={this.props.closingngMyList}>
-					{' '}
+
+				<div className="close-list" onClick={this.props.closingMyList}>
 					Close List
 				</div>
 			</section>
@@ -42,10 +42,9 @@ class MyList extends Component {
 	}
 }
 const mapStateToProps = state => {
-	console.log(state);
 	return state;
 };
 export default connect(mapStateToProps, {
-	closingngMyList,
+	closingMyList,
 	removingBook
 })(MyList);

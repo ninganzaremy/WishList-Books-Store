@@ -19,13 +19,24 @@ class App extends Component {
 				id="approot"
 				className={this.props.globalState.popupOpen == true ? 'popupOpen' : ''}
 			>
+				<div className="logo">
+					<h1>MyList</h1>
+				</div>
 				<div className="container">
-					<div
-						className="open-list"
-						onClick={
-							this.props.globalState.popupOpen == true ? 'popupOpen' : ''
-						}
-					>
+					<div className="home">
+						<div className="box">
+							<div className="content-area">
+								<div className="info-section">
+									<h1>Welcome to MyList Book Store</h1>
+									<h4>Click on your favourite Book </h4>
+									<div className="call-actions">
+										<i className="action-ghost-btn">Enjoy :)</i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="open-list" onClick={this.props.openingMyList}>
 						<i className="fas fa-bars" />
 					</div>
 					<AllBooks />
