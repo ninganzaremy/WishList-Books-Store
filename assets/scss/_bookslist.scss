@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
 }
+
 #approot .logo{
   background: #2512eb;
   position: fixed;
@@ -252,33 +253,274 @@
 
   }
 @media only screen and (max-width: 767px){
+  body{
+    overflow-x: hidden;
+  }
   .all-books{
     grid-template-columns: 1fr 1fr;
 
   }
-}
-@media only screen and (max-width: 767px){
-  .content-area{
-    height: calc(80vh);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .info-section{
-      width: 60%;
-      h1{
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: white;
-        margin-bottom: 4rem;
-      }
-      h4{
-        font-size: .8rem;
-        font-weight: 300;
-        color: white;
-        margin-bottom: 4rem;
-        letter-spacing: 2px;
-      }
-    }
+    #modal{
+      height: 100vh;
+      width: 100%;
   }
+  #modal .modal-grid{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
+  }
+  #modal .modal-grid .images{
+    width: 100px;
+  }
+  #modal .modal-grid .images .cover{
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #modal .modal-grid .info h2{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom:1rem;
+  }
+  #modal .modal-grid .info info-line{
+    font-size: .6rem;
+    font-weight: 200;
+    margin-bottom: .6rem;
+  }
+  #modal .modal-grid .info .info-line span{
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+  #modal .modal-grid .info p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+ }
+  #modal .modal-container .add-btn{
+    padding: 14px 25px;
+    color: white;
+    background: purple;
+    cursor: pointer;
+    display: inline-block;
+
+  }
+  .book-container .book{
+    background: red;
+    width: 150px;
+    height: 200px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+
+  }
+
+    .home .box .content-area .info-section h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    margin: 2rem;
+   }
+   .home .box .content-area {
+    height: calc(61vh);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  #approot .logo h1 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 900;
+  }
+  .open-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: black;
+    padding: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  #myList {
+    background: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 229px;
+    height: 100vh;
+    padding: 14px;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    transform: translate3d(400px, 0, 0);
+    transition: all .4s ease-in-out;
+  }
+  #myList h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  #myList ul li span.delete-btn {
+    display: inline-block;
+    padding: 5px;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .all-books {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px 20px;
+    padding: 0;
+  }
+  #modal .modal-container {
+    position: relative;
+    max-width: 600px;
+    background: white;
+    padding: 15px;
+    min-height: 450px;
+    }
+      #modal .modal-grid .info .info-line span {
+      font-size: 1.3rem;
+      font-weight: 700;
+      }
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+  body{
+    overflow-x: hidden;
+  }
+
+  #modal{
+    height: 100vh;
+    width: 100%;
+}
+#modal .modal-grid{
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 14px;
+}
+#modal .modal-grid .images{
+  width: 150px;
+}
+#modal .modal-grid .images .cover{
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#modal .modal-grid .info h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+.home .box .content-area .info-section h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4rem;}
+
+.home .box .content-area .info-section h4 {
+    font-size: 3.1rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+#modal .modal-grid .info info-line{
+  font-size: .8rem;
+  font-weight: 300;
+  margin-bottom: .8rem;
+}
+#modal .modal-grid .info .info-line span{
+  font-size: 1.5rem;
+  font-weight: 900;
+
+}
+#modal .modal-grid .info p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#modal .modal-container .add-btn {
+    padding: 14px 18px;
+    color: white;
+    background: purple;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6rem;
+}
+#modal .modal-container {
+    position: relative;
+    max-width: 742px;
+    background: white;
+    padding: 25px;
+    max-height: 773px;
+}
+    #modal .modal-grid .info .info-line span {
+    font-size: 2rem;
+    font-weight: 700;
+    }
+    .home .box .content-area .info-section .call-actions .action-ghost-btn {
+    padding: 16px 17px;
+    border-radius: 30px;
+    width: 197px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 2.9rem;
+    cursor: pointer;
+}
+#modal .modal-grid .info .info-line span text{
+    font-size: 2rem;
+    font-weight: 700;
+}
+#modal .modal-container .close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 19px;
+    color: white;
+    background: red;
+    cursor: pointer;
+    font-size: 5rem;
+}
+#myList.active {
+  width: 574px;
+  h3{
+    font-size: 4rem;
+  }
+  .close-list{
+    font-size: 2.5rem;
+  }
+  ul{
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 }
